@@ -1,0 +1,14 @@
+name: Article
+type: module
+description: 'Article content type.'
+version: VERSION
+core: 8.x
+dependencies:
+  - node
+  - block
+  - comment
+  - image
+  - taxonomy
+  - file
+  - views
+

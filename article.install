@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the starter installation profile.
+ */
+
+use Drupal\comment\Plugin\Field\FieldType\CommentItemInterface;
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function article_install() {
+
+  // Add comment field to article node type.
+  \Drupal::service('comment.manager')->addDefaultField('node', 'article', 'comment', CommentItemInterface::OPEN);
+
+  // Hide the comment field in the rss view mode.
+  entity_get_display('node', 'article', 'rss')
+    ->removeComponent('comment')
+    ->save();
+    
+}
