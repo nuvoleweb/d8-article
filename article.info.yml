@@ -12,3 +12,12 @@ dependencies:
   - file
   - views
 
+config_devel:
+  - core.entity_form_display.node.article.default
+  - core.entity_view_display.node.article.default
+  - core.entity_view_display.node.article.teaser
+  - field.instance.node.article.field_image
+  - field.instance.node.article.field_tags
+  - field.storage.node.field_image
+  - node.type.article
+  - rdf.mapping.node.article
